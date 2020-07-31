@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Welcome to Merlin's Potions." />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>Merlin's Potions</title>
+    <!-- IMPORTS -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/mainStyle.css">
+    <!-- /CSS -->
+    <!-- JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="./js/app.js" defer></script>
+    <!-- /JS -->
+    <!-- /IMPORTS -->
+</head>
+
+<body>
+    <!-- NAVBAR-->
+    <div class="panelHeader">
+        <img src="" alt="Logo da empresa">
+        <div>
+            <a href="">Search</a>
+        </div>
+    </div>
+    <nav>
+        <div class="pageHeader">
+            <a class="active" href="">Potions</a>
+            <a href="">Ingredients</a>
+            <a href="">Books</a>
+            <a href="">Supplies</a>
+            <a href="">Charms</a>
+            <a href="">Clearance!</a>
+        </div>
+    </nav>
+    <!-- /NAVBAR -->
+    <div id="potions">
+        <section v-if="errored">
+            <p>Pedimos desculpas, não estamos conseguindo recuperar as informações no momento. Por favor, tente
+                novamente mais tarde.</p>
+        </section>
+        <div v-if="loading">Carregando a lista de produtos...</div>
+        <div v-else>
+            <div v-for="(potion, index) in potions_list" :key="index">
+                <p>{{potion.name}}</p>
+                <p>{{potion.effect}}</p>
+                <p>{{potion.price}}</p>
+                <div v-for="(ingredient, index) in potion.ingredients" :key="index">
+                    <ul>{{ingredient}}</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
