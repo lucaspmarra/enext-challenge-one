@@ -23,40 +23,51 @@
 
 <body>
     <!-- NAVBAR-->
-    <div class="panelHeader">
-        <img src="" alt="Logo da empresa">
-        <div>
-            <a href="">Search</a>
-        </div>
-    </div>
+    <!-- Top view -->
     <nav>
-        <div class="pageHeader">
-            <a class="active" href="">Potions</a>
-            <a href="">Ingredients</a>
-            <a href="">Books</a>
-            <a href="">Supplies</a>
-            <a href="">Charms</a>
-            <a href="">Clearance!</a>
-        </div>
+        <ul class="nav-search-main">
+            <li class="nav-search-item"><img src="" alt="Logo da empresa"></li>
+            <li class="nav-search-item"><a href="">Search</a></li>
+        </ul>
     </nav>
+    <!-- /Top view -->
+    <!-- Nav view -->
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item"><a href="">Potions</a></li>
+            <li class="nav-item"><a href="">Ingredients</a></li>
+            <li class="nav-item"><a href="">Books</a></li>
+            <li class="nav-item"><a href="">Supplies</a></li>
+            <li class="nav-item"><a href="">Charms</a></li>
+            <li class="nav-item"><a href="">Clearance!</a></li>
+            <li class="nav-item"><a href="">Sign In</a></li>
+            <li class="nav-item"><a>Or</a></li>
+            <li class="nav-item"><a href="">Sign Up</a></li>
+        </ul>
+    </nav>
+    <!-- /Nav view -->
     <!-- /NAVBAR -->
-    <div id="potions">
-        <section v-if="errored">
-            <p>Pedimos desculpas, não estamos conseguindo recuperar as informações no momento. Por favor, tente
-                novamente mais tarde.</p>
-        </section>
-        <div v-if="loading">Carregando a lista de produtos...</div>
-        <div v-else>
-            <div v-for="(potion, index) in potions_list" :key="index">
-                <p>{{potion.name}}</p>
-                <p>{{potion.effect}}</p>
-                <p>{{potion.price}}</p>
-                <div v-for="(ingredient, index) in potion.ingredients" :key="index">
-                    <ul>{{ingredient}}</ul>
+    <!-- CONTENT -->
+    <div class="wrapper-grid">
+        <div id="potions">
+            <section v-if="errored">
+                <p>Pedimos desculpas, não estamos conseguindo recuperar as informações no momento. Por favor, tente
+                    novamente mais tarde.</p>
+            </section>
+            <div v-else>
+                <div v-for="(potion, index) in potions_list" :key="index">
+                    <div class="img"></div>
+                    <h1>{{potion.name}}</h1>
+                    <!-- <p>{{potion.effect}}</p> -->
+                    <p>{{potion.price}}</p>
+                    <!-- <div v-for="(ingredient, index) in potion.ingredients" :key="index">
+                        <ul>{{ingredient}}</ul>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
+    <!-- /CONTENT -->
 </body>
 
 </html>
