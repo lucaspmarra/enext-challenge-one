@@ -10,41 +10,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
     <title>Merlin's Potions</title>
     <!-- IMPORTS -->
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/mainStyle.css">
-    <!-- /CSS -->
-    <!-- JS -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
-    <script src="./js/app.js" defer></script>
-    <!-- /JS -->
+    <link rel="stylesheet" href="./css/style.css">
     <!-- /IMPORTS -->
 </head>
 
 <body>
     <!-- NAVBAR-->
     <!-- Top view -->
+
+    <!-- offcanvas menu -->
+
+    <div class="offcanvas-menu js-offcanvas-menu">
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="">Potions</a></li>
+                <li class="nav-item"><a href="">Ingredients</a></li>
+                <li class="nav-item"><a href="">Books</a></li>
+                <li class="nav-item"><a href="">Supplies</a></li>
+                <li class="nav-item"><a href="">Charms</a></li>
+                <li class="nav-item"><a href="">Clearance!</a></li>
+                <li class="nav-item"><a href="">Sign In</a></li>
+                <!-- <li class="nav-item"><a href="">Sign Up</a></li> -->
+            </ul>
+        </nav>
+    </div>
+    <!-- offcanvas menu -->
     <nav>
         <ul class="nav-search-main">
             <li class="nav-search-item"><img src="" alt="Logo da empresa"></li>
             <li class="nav-search-item"><a href="">Search</a></li>
         </ul>
     </nav>
+
     <!-- /Top view -->
     <!-- Nav view -->
-    <nav>
-        <ul class="nav-list">
-            <li class="nav-item"><a href="">Potions</a></li>
-            <li class="nav-item"><a href="">Ingredients</a></li>
-            <li class="nav-item"><a href="">Books</a></li>
-            <li class="nav-item"><a href="">Supplies</a></li>
-            <li class="nav-item"><a href="">Charms</a></li>
-            <li class="nav-item"><a href="">Clearance!</a></li>
-            <li class="nav-item"><a href="">Sign In</a></li>
-            <li class="nav-item"><a>Or</a></li>
-            <li class="nav-item"><a href="">Sign Up</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="">Potions</a></li>
+                <li class="nav-item"><a href="">Ingredients</a></li>
+                <li class="nav-item"><a href="">Books</a></li>
+                <li class="nav-item"><a href="">Supplies</a></li>
+                <li class="nav-item"><a href="">Charms</a></li>
+                <li class="nav-item"><a href="">Clearance!</a></li>
+                <li class="nav-item"><a href="">Sign In</a></li>
+                <!-- <li class="nav-item"><a href="">Sign Up</a></li> -->
+                <button class="offcanvas-button js-trigger">offcanvas</button>
+            </ul>
+        </nav>
+
+
+    </header>
     <!-- /Nav view -->
     <!-- /NAVBAR -->
     <!-- CONTENT -->
@@ -68,6 +84,12 @@
         </div>
     </div>
     <!-- /CONTENT -->
+    <!-- JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="./js/app.js" defer></script>
+    <script src="./js/main.js"></script>
+    <!-- /JS -->
 </body>
 
 </html>
