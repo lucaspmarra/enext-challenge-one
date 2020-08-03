@@ -1,9 +1,9 @@
 new Vue({
-    el: '#potions',
+    el: '#app',
     data() {
         return {
             potions_list: [],
-            errored: false
+            errored: false,
         }
     },
     mounted: function () {
