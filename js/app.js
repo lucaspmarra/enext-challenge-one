@@ -22,4 +22,5 @@ new Vue({
                 this.errored = true
             })
     },
+
 })

@@ -15,16 +15,14 @@ $none: 0;
   box-sizing: border-box;
 }
 
+html,
 body {
   min-height: 100vh;
   // width: 100vw;
   padding: $none;
+  position: relative;
   background-color: $coolWhite;
   font-family: "Roboto", sans-serif;
-}
-.main {
-  width: 800px;
-  margin: $none auto;
 }
 
 /* gallery */
@@ -42,8 +40,10 @@ body {
   width: 15rem;
 }
 /* gallery */
-/* navigation desktop + mobile */
-
+/* navigation */
+/***************/
+/***************/
+/***************/
 nav {
   background: $purple;
   display: flex;
@@ -51,7 +51,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: 70px;
-  padding: 0 100px;
+  padding: $none 100px;
+
   //
   .logo {
     color: #fff;
@@ -63,13 +64,14 @@ nav {
   .nav-items {
     display: flex;
     flex: 1;
-    padding: 0 0 0 40px;
+    padding: $none $none $none 40px;
   }
 
   //
   .nav-items li {
     list-style: none;
-    padding: 0 15px;
+    padding: $none 15px;
+
     &:last-child {
       margin-left: auto;
     }
@@ -80,6 +82,7 @@ nav {
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;
+    font-style: italic;
     &:hover {
       color: $hoverPurple;
     }
@@ -98,7 +101,7 @@ nav form {
   .search-data {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
+    padding: $none 10px;
     color: #fff;
     font-size: 17px;
     border: none;
@@ -108,7 +111,7 @@ nav form {
 }
 
 nav form button {
-  padding: 0 15px;
+  padding: $none 15px;
   color: #fff;
   font-size: 17px;
   background: #ff3d00;
@@ -124,7 +127,7 @@ nav .cancel-icon,
 nav .search-icon {
   width: 40px;
   text-align: center;
-  margin: 0 50px;
+  margin: $none 50px;
   font-size: 18px;
   color: #fff;
   cursor: pointer;
@@ -135,9 +138,175 @@ nav .cancel-icon,
 nav .search-icon {
   display: none;
 }
+/* navigation */
+/***************/
+/***************/
+/***************/
+/* potions cards */
+/***************/
+/***************/
+/***************/
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  // place-items: center;
+  text-align: center;
+  margin-left: 140px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  padding-top: $paddingMedium;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: 320px;
+  width: 200px;
+  margin: 10px 20px;
+  background: white;
+  transition: 0.6s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    height: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  &:hover .bottom-text {
+    opacity: 1;
+    visibility: visible;
+  }
+  .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .top-text {
+    padding: 5px;
+    .name {
+      font-size: 25px;
+      font-weight: 500;
+      color: #202020;
+    }
+    p {
+      font-size: 20px;
+      font-weight: 600;
+      color: $purple;
+      line-height: 20px;
+    }
+  }
+  .bottom-text {
+    padding: $none 20px 10px 20px;
+    opacity: $none;
+    visibility: hidden;
+    text-align: left;
+    transition: 0.2s;
+    .text {
+      text-align: left;
+    }
+    .btn {
+      margin: 10px $none;
+      text-align: left;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      background: $purple;
+      padding: 5px 8px;
+      border-radius: 3px;
+      display: inline-flex;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+/* potions cards */
+/***************/
+/***************/
+/***************/
+
+/**footer**/
+footer {
+  background: #f1f1f1;
+  padding: 90px 0;
+  clear: both;
+  position: relative;
+  .footer-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    .logo {
+      width: 180px;
+    }
+    .social-media {
+      margin: 20px 0;
+      a {
+        color: $purple;
+        margin-right: 25px;
+        font-size: 22px;
+        text-decoration: none;
+        transition: 0.3s linear;
+        &:hover {
+          color: $hoverPurple;
+        }
+      }
+    }
+    .right-col h1 {
+      font-size: 26px;
+    }
+    .border {
+      width: 100px;
+      height: 4px;
+      background: $purple;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .txtb {
+      flex: 1;
+      padding: 18px 40px;
+      font-size: 16px;
+      color: #293043;
+      background: #ddd;
+      border: none;
+      font-weight: 700;
+      outline: none;
+      border-radius: 30px;
+      min-width: 260px;
+    }
+    .btn-newsletter {
+      padding: 18px 40px;
+      font-size: 16px;
+      color: #f1f1f1;
+      background: $purple;
+      border: none;
+      font-weight: 700;
+      outline: none;
+      border-radius: 30px;
+      margin-left: 20px;
+      cursor: pointer;
+      transition: opacity 0.3s linear;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+/**footer**/
+
 @media (max-width: 1245px) {
   nav {
-    padding: 0 50px;
+    padding: $none 50px;
     background: none;
     .logo {
       color: $purple;
@@ -174,7 +343,7 @@ nav .search-icon {
     }
     .nav-items li {
       line-height: 40px;
-      margin: 30px 0;
+      margin: 30px $none;
     }
     .nav-items li a {
       font-size: 20px;
@@ -185,7 +354,7 @@ nav .search-icon {
     position: absolute;
     top: 80px;
     right: 50px;
-    opacity: 0;
+    opacity: $none;
     pointer-events: none;
     transition: top 0.3s ease, opacity 0.1s ease;
     .active {
@@ -200,12 +369,12 @@ nav .search-icon {
     content: "";
     top: -13px;
     right: 0px;
-    width: 0;
-    height: 0;
+    width: $none;
+    height: $none;
     z-index: -1;
     border: 10px solid transparent;
     border-bottom-color: $purple;
-    margin: -20px 0 0;
+    margin: -20px $none $none;
   }
   nav form:after {
     position: absolute;
@@ -251,28 +420,44 @@ nav .search-icon {
   font-weight: 700;
 }
 .space {
-  margin: 10px 0;
+  margin: 10px $none;
 }
 nav .logo.space {
   color: red;
-  padding: 0 5px 0 0;
+  padding: $none 5px $none $none;
 }
 @media (max-width: 980px) {
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon {
-    margin: 0 20px;
+    margin: $none 20px;
   }
   nav form {
     right: 30px;
   }
+  .footer-container {
+    max-width: 600px;
+    .right-col {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+    .left-col {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
+
 @media (max-width: 350px) {
   nav .menu-icon,
   nav .cancel-icon,
   nav .search-icon {
-    margin: 0 10px;
+    margin: $none 10px;
     font-size: 16px;
   }
+  .btn-newsletter {
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
-/* navigation desktop + mobile */

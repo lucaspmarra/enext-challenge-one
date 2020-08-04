@@ -29,7 +29,7 @@
             <li><a href="#">Books</a></li>
             <li><a href="#">Supplies</a></li>
             <li><a href="#">Clearance</a></li>
-            <li><a href="#">Signin</a></li>
+            <li><a href="#">Sign-in</a></li>
         </div>
 
         <div class="cancel-icon">
@@ -37,33 +37,81 @@
     </nav>
     <!-- /NAVBAR -->
     <!-- CONTENT -->
-    <div class="main">
-        <div>
-            <!-- image gallery -->
-            <h1 class="gallery-title">Potions</h1>
-            <div class="gallery">
+    <!-- api data goes here -->
+    <div class="wrapper" id="app">
+        <section v-if="errored">
+            <p>Pedimos desculpas, não estamos conseguindo recuperar as informações no momento. Por favor, tente
+                novamente mais tarde.</p>
+        </section>
+        <div v-else>
+            <div class="container">
+                <div class="card" v-for="(potion, index) in potions_list" :key="index">
+                    <div class="img">
+                        <img :src="`./img/products/${potion.image}`" /></a>
+                    </div> <!-- /image -->
+                    <div class="top-text">
+                        <div class="name">
+                            {{potion.name}}
+                        </div> <!-- /top-name-->
+                        <p>for only {{potion.price}}</p>
 
-                <a href="./img/products/aging-potion.png"><img class="gallery-img" src="./img/products/aging-potion.png"
-                        alt="Aging Potion"></a>
+                    </div> <!-- /top-text-->
+                    <div class="bottom-text">
+                        <h4>Effects:</h4>
+                        <p>{{potion.effect}}</p>
+                        <h4>Ingredients:</h4>
+                        <div v-for="(ingredient, index) in potion.ingredients" :key="index">
+                            <div class="text">
 
-                <a href="./img/products/bulgeye-potion.png"><img class="gallery-img"
-                        src="./img/products/bulgeye-potion.png" alt="Bulgeye Potion"></a>
-                <a href="./img/products/dragon-tonic.png"><img class="gallery-img" src="./img/products/dragon-tonic.png"
-                        alt="Dragon Tonic"></a>
-                <a href="./img/products/love-potion.png"><img class="gallery-img" src="./img/products/love-potion.png"
-                        alt="Love Potion"></a>
-                <a href="./img/products/polyjuice-potion.png"><img class="gallery-img"
-                        src="./img/products/polyjuice-potion.png" alt="Polyjuice Potion"></a>
-                <a href="./img/products/sleeping-draught.png"><img class="gallery-img"
-                        src="./img/products/sleeping-draught.png" alt="Sleeping Draught"></a>
+                                <p>{{ingredient}}</p>
+                            </div>
+
+                        </div> <!-- /ingredients text-->
+                        <div class="btn"><a href="#">Buy</a></div>
+                    </div> <!-- /bottom-text -->
+                </div> <!-- /card-->
             </div>
-            <!-- /image gallery -->
-
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- FOOTER -->
     <footer>
-        <h1>Footer here</h1>
+        <div class="footer-container">
+            <div class="left-col">
+                <div class="infos social-media">
+                    <a href="">Company</a>
+                    <a href="">Contact Us</a>
+                    <a href="">Shipping</a>
+                    <a href="">Returns</a>
+                    <a href="">Careers</a>
+                </div>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p class="rights-text">© 2015 Merlin's Potions. All Rights Reserved</p>
+            </div>
+
+            <div class="right-col">
+                <h1>Our Newsletter</h1>
+                <div class="border"></div>
+                <p>Sign up for our newsletter & get exclusive discounts!</p>
+                <form action="" class="newsletter-form">
+                    <input type="text" class="txtb" placeholder="Enter Your Email">
+                    <input type="submit" class="btn-newsletter" value="submit">
+                </form>
+            </div>
+        </div>
     </footer>
+    <!-- /FOOTER -->
     <!-- /CONTENT -->
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
