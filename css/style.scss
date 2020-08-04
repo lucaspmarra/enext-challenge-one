@@ -161,8 +161,8 @@ nav .search-icon {
 }
 
 .card {
-  height: 320px;
-  width: 200px;
+  height: 420px;
+  width: 300px;
   margin: 10px 20px;
   background: white;
   transition: 0.6s;
@@ -180,6 +180,7 @@ nav .search-icon {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    padding: $paddingExtraSmall;
   }
   .top-text {
     padding: 5px;
