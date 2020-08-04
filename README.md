@@ -9,13 +9,15 @@ Boa noite, nesse repositório estarão os arquivos necessários para que o proje
 │   └── style.css
 │   └── style.scss
 ├── img
-│   └── products
-│       └── aging-potion.png
-│       └── bulgeye-potion.png
-│       └── dragon-tonic.png
-│       └── love-potion.png
-│       └── polyjuice-potion.png
-│       └── sleeping-draught.png
+│   ├── products
+│   │   └── aging-potion.png
+│   │   └── bulgeye-potion.png
+│   │   └── dragon-tonic.png
+│   │   └── love-potion.png
+│   │   └── polyjuice-potion.png
+│   │   └── sleeping-draught.png
+│   └── icon
+│       └── potion.svg
 ├── js
 │   └── app.js
 │   └── main.js
